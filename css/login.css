@@ -1,0 +1,65 @@
+body{
+    background-color: black;
+    background-image: url(../images/backround.jpg);
+    color: white;
+
+}
+header{
+    display: flex;
+    color: rgb(223, 206, 56);
+    font-size: 45px;
+    font-family: serif;
+    font-weight: bold;
+    justify-content: center;
+}
+
+footer{
+display: flex;
+color: white;
+font-size: 15px;
+font-family: serif;
+font-weight: bold;
+justify-content: center;
+padding:  15px;
+backround-color: black;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+}
+footer a:hover{
+    color: rgb(223, 206, 56);
+}
+header a{
+    justify-self: right;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+    font-size: 30px;
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.top-menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+.top-menu a {
+    text-decoration: none;
+    color: gainsboro;
+    font-weight: bold;
+}
+.top-menu a:hover {
+    color: rgb(223, 206, 56);
+}
+
+form{
+    text-align: center;
+    font-size: 25px;
+}

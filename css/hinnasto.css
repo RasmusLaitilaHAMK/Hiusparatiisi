@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.one {
+    border: 0.3rem solid;
+    padding: 4px;
+}
+.two {
+    border: 0.3rem solid;
+    padding: 4px;
+}
+footer {
+    color: rgb(204, 8, 8);
+    font-size: 20px;
+    text-align: center;          
+}
+table {
+    font-size: 32px;
+    margin: 0 auto;
+}
+h2 {
+    font-size: 48px;
+    text-align: center;
+    color: rgb(223, 206, 56);
+
+}
