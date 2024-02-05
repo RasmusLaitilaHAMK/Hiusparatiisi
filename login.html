@@ -28,22 +28,23 @@
     <!--Break line go brr-->
     <main>
         <form>
-        <div class="form-floating">
+        <div class="form-floating" action="./php/database.php" method="post">
             <label for="floatingPassword">Käyttäjänimi:</label>
 
-            <input type="text" class="form-control" id="floatingUsername" placeholder="MattiMeikäläinen">
+            <input type="text" class="form-control" id="name" placeholder="Matti Meikäläinen">
           </div>
-        <div class="form-floating mb-3">
-            <label for="floatingInput">Sähköposti:</label>
 
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <div class="form-floating mb-3">
+            <label for="floatingInput">Puhelinnumero:</label>
+
+            <input type="text" class="form-control" id="floatingInput" placeholder="040123456">
           </div>
           <div class="form-floating">
             <label for="floatingPassword">Salasana:</label>
 
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Salasana">
             <br>
-            <button type="submit" formaction="../index copy.html">Submit</button>
+            <input type="submit" name="tiedot" value="Submit"></>
             <button type="reset">Reset</button>
           </div>
         </form>
