@@ -16,7 +16,6 @@
             <input type="submit" name="tiedot" value="Submit"><br>
          </form>
          <?php
-         include("henkilölista.php");
          ?>  
     </body>
 </html>

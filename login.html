@@ -27,25 +27,24 @@
     <br>
     <!--Break line go brr-->
     <main>
-        <form>
-        <div class="form-floating" action="./php/database.php" method="post">
+        <form action="./php/database.php" method="post">
+        <div class="form-floating">
             <label for="floatingPassword">Käyttäjänimi:</label>
-
-            <input type="text" class="form-control" id="name" placeholder="Matti Meikäläinen">
+            <input type="text" class="form-control" name="name" placeholder="Mattinator" required="true" maxlength="16">
           </div>
 
         <div class="form-floating mb-3">
             <label for="floatingInput">Puhelinnumero:</label>
-
-            <input type="text" class="form-control" id="mobile" placeholder="040123456">
+            <input type="text" class="form-control" name="mobile" placeholder="040123456" required="true" minlength="10" maxlength="10">
           </div>
+
           <div class="form-floating">
             <label for="floatingPassword">Salasana:</label>
+            <input type="password" class="form-control" name="pwd" placeholder="Salasana" required="true" maxlength="30">
+            <input type="hidden" name="isAdmin" value="0"><br>
 
-            <input type="password" class="form-control" id="pwd" placeholder="Salasana">
-            <br>
-            <input type="submit" name="tiedot" value="Submit"></>
-            <button type="reset">Reset</button>
+            <input type="submit" name="tiedot" value="Rekisteröidy"></i>
+            <button type="reset">Nollaa</button>
           </div>
         </form>
         <!--Basic login information, no function-->
