@@ -1,19 +1,17 @@
 <?php
-$initials=parse_ini_file("./muuta/ht.tieto.ini");
+$initials=parse_ini_file("../php/muuta/ht.tieto.ini");
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 try{
     $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);}
 catch(Exception $e){
-    header("Location:./muuta/yhteysvirhe.html");
+    header("Location:../php/muuta/yhteysvirhe.html");
     exit;
 }
-include "muuta/header.html";
 $numero=1;
-$tulos=mysqli_query($yhteys, "select * from user");
+$tulos=mysqli_query($yhteys, "select * from users");
 while ($rivi=mysqli_fetch_object($tulos)){
     print "$numero. $rivi->etunimi $rivi->sukunimi <a href='./mods/remuser.php?poistettava=$rivi->id'>Poista</a> <a href='./mods/moduser.php?muokattava=$rivi->id'>Muokkaa</a></p>";
     $numero=$numero+1;
 }
 mysqli_close($yhteys);
-include "muuta/footer.html";
 ?>
