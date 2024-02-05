@@ -11,12 +11,10 @@ $name=isset($_POST["name"]) ? $_POST["name"] : 0;
 $pwd=isset($_POST["pwd"]) ? $_POST["pwd"] : 0;
 $mobile=isset($_POST["mobile"]) ? $_POST["mobile"] : 0;
 $isAdmin=isset($_POST["isAdmin"]) ? $_POST["isAdmin"] : 0;
-if ($name == "admin" && $pwd == $initials["pwd"]) {
-    $isAdmin=1;
+if ($name == "admin" && $pwd == "Kaljuparatiisi") {   
+    $isAdmin = 1; 
 }
-else{
-    $isAdmin=0;
-}
+
 $sql="INSERT INTO users (name, pwd, mobile, isAdmin) VALUES(?, ?, ?, ?)";
 
 //Valmistellaan sql-lause
