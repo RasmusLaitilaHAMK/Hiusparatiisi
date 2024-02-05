@@ -1,10 +1,10 @@
 <?php
-$initials=parse_ini_file("./muuta/ht.tieto.ini");
+$initials=parse_ini_file("./ht.tieto.ini");
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 try{
     $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);}
 catch(Exception $e){
-    header("Location:./muuta/yhteysvirhe.html");
+    header("Location:../php/muuta/yhteysvirhe.html");
     exit;
 }
 include "muuta/header.html";
