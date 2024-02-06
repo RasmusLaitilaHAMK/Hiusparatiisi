@@ -54,7 +54,7 @@ if (!$rivi=mysqli_fetch_object($tulos)){
     <input type='hidden' name='ID' value='<?php echo $rivi->ID; ?>'>
     <p>name: <input type='text' name='name' value='<?php echo $rivi->name; ?>'></p>
     <p>password: <input type='text' name='pwd' value='<?php echo $rivi->pwd; ?>'></p>
-    <p>mobile: <input type='text' name='mobile' value='<?php echo $rivi->mobile; ?>'></p>
+    <p>mobile: <input type='text' minlength="10" maxlength="10" name='mobile' value='<?php echo $rivi->mobile; ?>'></p>
 
     <input type='submit' name='Päivitä' value='Päivitä'><br>
 </form>
