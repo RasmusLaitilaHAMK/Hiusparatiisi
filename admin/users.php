@@ -22,7 +22,7 @@ catch(Exception $e){
 }
 //include ".html";
 $numero=1;
-$tulos=mysqli_query($yhteys, "select * from users");
+$tulos = mysqli_query($yhteys, "SELECT * FROM users WHERE isAdmin <> 1");
 while ($rivi=mysqli_fetch_object($tulos)){
     print "$numero. $rivi->ID $rivi->name $rivi->pwd $rivi->mobile <a href='./poistauser.php?poistettava=$rivi->ID'>Poista</a> <a href='./muokkaauser.php?muokattava=$rivi->ID'>Muokkaa</a></p>";
     $numero=$numero+1;
