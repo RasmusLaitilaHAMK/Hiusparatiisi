@@ -19,7 +19,7 @@ $muokattava=isset($_GET["muokattava"]) ? $_GET["muokattava"]  : "";
 
 //Jos tietoa ei ole annettu, palataan listaukseen
 if (empty($muokattava)){
-    header("Location:../users.php");
+    header("Location:./virhe.html");
     exit;
 }
 $initials=parse_ini_file("./ht.as.ini");
@@ -28,7 +28,7 @@ try{
     $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);}
 
 catch(Exception $e){
-    header("Location:../html/yhteysvirhe.html");
+    header("Location:./virhe.html");
     exit;
 }
 
@@ -55,7 +55,7 @@ if (!$rivi=mysqli_fetch_object($tulos)){
     <p>ID: <span><?php echo $rivi->ID; ?></span></p>
     <input type='hidden' name='ID' value='<?php echo $rivi->ID; ?>'>
     <p>name: <input type='text' name='name' value='<?php echo $rivi->name; ?>'></p>
-    <p>password: <input type='text' name='pwd' value='<?php echo $rivi->pwd; ?>'></p>
+    <p>password: <input type='text'minlength="8" name='pwd' value='<?php echo $rivi->pwd; ?>'></p>
     <p>mobile: <input type='text' minlength="10" maxlength="10" name='mobile' value='<?php echo $rivi->mobile; ?>'></p>
 
     <input type='submit' name='Päivitä' value='Päivitä'><br>

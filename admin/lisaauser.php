@@ -2,12 +2,13 @@
 $initials=parse_ini_file("./ht.as.ini");
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 try{
-    $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);}
-
+    $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);
+}
 catch(Exception $e){
-    header("Location:../virhe.html");
+    header("Location:./virhe.html");
     exit;   
 }
+
 
 //Luetaan lomakkeelta tulleet tiedot funktiolla $_POST
 $name=isset($_POST["name"]) ? $_POST["name"] : "";

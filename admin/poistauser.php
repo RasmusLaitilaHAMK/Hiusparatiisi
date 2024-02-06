@@ -5,7 +5,7 @@ try{
     $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);}
 
 catch(Exception $e){
-    header("../html/yhteysvirhe.html");
+    header("Location:./virhe.html");
     exit;
 }
 
