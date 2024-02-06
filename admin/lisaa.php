@@ -12,7 +12,10 @@
 <body>
 <header>
         <h1> (ADMIN) Hamkin Hiusparatiisi</h1>
+
     </header>
+    <h1>lisää käyttäjä</h1>
+
 <nav class="users">
         <a href="../admin/users.php">takaisin</a> 
     </nav> <!--First navigation box for the frontpage-->
