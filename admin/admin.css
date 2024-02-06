@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+    color: greenyellow;
+    font-size: 21px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    
+}
+body a {
+    color: azure;
+
+}
+body a:visited {
+    color: rgb(255, 255, 255);
+}
+nav {
+    margin: 15px;
+}
+footer {
+    padding: 30px;
+}

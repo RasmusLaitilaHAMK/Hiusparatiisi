@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="descripton" content="Experience exceptional grooming at our barber shop. Our skilled barbers offer modern and classic haircuts and grooming services. Step into a welcoming atmosphere where style meets precision. Book your appointment for a fresh look today!">
     <title>(ADMIN) HAMK Hiusparatiisi</title>
+    <link rel="stylesheet" href="admin.css">
+
 </head>
 <body>
     <!--Hiuskaiedas HAMK tervetuloa-->

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(ADMIN) HAMK Hiusparatiisi</title>
+    <link rel="stylesheet" href="admin.css">
+
 
 
 </head>
@@ -23,5 +25,10 @@
 
     <input type='submit' name='Päivitä' value='Päivitä'>
 </form>
+
+<footer>
+        <a href="https://github.com/RasmusLaitilaHAMK/WebDevTeam6">© 2024 Rasmus Laitila, Iiro Käki, Lauri Raatikainen</a>
+        <!--Link to github-->
+    </footer>
 </body>
 </html>
