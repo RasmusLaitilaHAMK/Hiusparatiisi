@@ -11,7 +11,7 @@ $name=isset($_POST["name"]) ? $_POST["name"] : 0;
 $pwd=isset($_POST["pwd"]) ? $_POST["pwd"] : 0;
 $mobile=isset($_POST["mobile"]) ? $_POST["mobile"] : 0;
 $isAdmin=isset($_POST["isAdmin"]) ? $_POST["isAdmin"] : 0;
-if ($name == "admin" && $pwd == $initials["adminpwd"] && $mobile == $initials["adminmobile"]) {   
+if ($name == $initials["admin"] && $pwd == $initials["adminpwd"] && $mobile == $initials["adminmobile"]) {   
     $isAdmin = 1; 
 }
 
