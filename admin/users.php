@@ -10,10 +10,11 @@
 </head>
 <body>
     <!--Hiuskaiedas HAMK tervetuloa-->
+
     <header>
         <h1> (ADMIN) Hamkin Hiusparatiisi</h1>
     </header>
-    <nav class="index">
+      <nav class="index">
         <a href="../index.html">etusivulle</a> 
         <a href="./lisaa.php">lisää käyttäjä</a> 
 
