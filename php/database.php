@@ -27,7 +27,6 @@ mysqli_stmt_bind_param($stmt, 'sssi', $name, $pwd, $mobile, $isAdmin); //stateme
 mysqli_stmt_execute($stmt);
 //Suljetaan tietokantayhteys
 mysqli_close($yhteys);
-
-header("Location: ../index.html");
+header("Location:../index.html");
 exit;
 ?>
