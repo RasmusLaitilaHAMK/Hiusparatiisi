@@ -44,7 +44,7 @@ nav{
     justify-content: center;
     margin-right: 50px;
     font-size: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
 nav ul{
@@ -67,6 +67,7 @@ nav ul{
 
 .login{
     justify-content: right;
+    flex-direction: column;
 }
 .login a{
     color: white;
@@ -101,4 +102,16 @@ font-family:serif;
 }
 article H1{
     font-weight: bold;
+}
+div{
+    text-align: right;
+    justify-content: right;
+}
+div a{
+    color: white;
+    text-decoration: solid;
+}
+div button{
+    margin: 5px;
+    color: white;
 }

@@ -19,11 +19,11 @@
 
     </nav> <!--First navigation box for the frontpage-->
 
-    <?php
+<?php
 $initials = parse_ini_file("./ht.as.ini");
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 try {
-    $yhteys = mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);
+    $yhteys = mysqli_connect($initials["dbs"], $initials["user"], $initials["password"], $initials["db"]);
 } catch(Exception $e) {
     header("Location:./virhe.html");
     exit;
