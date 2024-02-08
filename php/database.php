@@ -2,11 +2,13 @@
 $initials=parse_ini_file("./muuta/ht.tieto.ini");
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 try{
-    $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);}
-catch(Exception $e){
-    header("Location:./muuta/yhteysvirhe.html");
-    exit;
-}
+    //   $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);
+    $yhteys = mysqli_connect($initials["dbs"], $initials["user"], $initials["password"], $initials["db"]);
+    }
+    catch(Exception $e){
+        header("Location:./muuta/yhteysvirhe.html");
+        exit;
+    }
 $name=isset($_POST["name"]) ? $_POST["name"] : 0;
 $pwd=isset($_POST["pwd"]) ? $_POST["pwd"] : 0;
 $mobile=isset($_POST["mobile"]) ? $_POST["mobile"] : 0;

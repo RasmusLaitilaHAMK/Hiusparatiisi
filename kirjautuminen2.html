@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="describtion" content="Basic login page">
+    <meta name="description" content="Basic login page">
     <link rel="stylesheet" href="css/login.css">
     <title>HAMK Hiusparatiisi</title>
 </head>
@@ -27,35 +27,29 @@
     <br>
     <!--Break line go brr-->
     <main>
-        <form action="./php/database.php" method="post">
-        <div class="form-floating">
-            <label for="floatingPassword">Käyttäjänimi:</label>
-            <input type="text" class="form-control" name="name" placeholder="Mattinator" required="true" maxlength="16">
-          </div>
+        <form action="./php/kirjaudu2.php" method="post">
+            <div class="form-floating">
+                <label for="floatingPassword">Käyttäjänimi:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Käyttäjänimi" required="true" maxlength="16">
+            </div>
 
-        <div class="form-floating mb-3">
-            <label for="floatingInput">Puhelinnumero:</label>
-            <input type="text" class="form-control" name="mobile" placeholder="0401234567" required="true" minlength="10" maxlength="10">
-          </div>
+            <div class="form-floating">
+                <label for="password">Salasana:</label>
+                <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Salasana" required="true" minlength="8" maxlength="30">
+            </div>
 
-          <div class="form-floating">
-            <label for="floatingPassword">Salasana:</label>
-            <input type="password" class="form-control" name="pwd" placeholder="Salasana" required="true" minlength="8" maxlength="30">
-            <input type="hidden" name="isAdmin" value="0"><br>
-
-            <input type="submit" name="tiedot" value="Rekisteröidy"></i>
+            <input type="submit" name="login" value="Kirjaudu">
             <button type="reset">Nollaa</button>
-          </div>
         </form>
 
         <div class="link" style="text-align: center;">
-	<a href="kirjautuminen.html">Kirjaudu sisään</a>
+            <a href="rekisteröinti.html">Rekisteröidy</a>
         </div>
 
-	
         <!--Basic login information, no function-->
         <footer>
             <a href="http://shell.hamk.fi/~trtkp23_6/">© 2024 Rasmus Laitila, Iiro Käki, Lauri Raatikainen</a>
         </footer>
     </main>
 </body>
+</html>

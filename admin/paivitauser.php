@@ -19,7 +19,7 @@ $mobile = isset($_POST["mobile"]) ? $_POST["mobile"] : "";
 $initials=parse_ini_file("./ht.as.ini");
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 try{
-    $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);}
+    $yhteys=mysqli_connect($initials["dbs"], $initials["username"], $initials["password"], $initials["db"]);}
 
 catch(Exception $e){
     header("Location:./virhe.html");

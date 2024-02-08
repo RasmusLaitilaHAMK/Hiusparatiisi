@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+$name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Default';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +18,12 @@
         <h1>Hamkin Hiusparatiisi</h1>
     </header>
     <nav class="login">
-        <a href="kirjautuminen2.html">Kirjaudu sisään</a> 
+        <a href="kirjautuminen2.html"><p>Tervetuloa:<?php print($name)?></p></a><br>
+        <a href="index.html"><p>Kirjaudu ulos></p></a> 
     </nav> <!--First navigation box for the login link-->
     <nav>
         <ul class="top-menu">
-            <li><a href="index.html">Etusivu</a></li>
+            <li><a href="userIn.php">Etusivu</a></li>
             <li><a href="hinnasto.html">Hinnasto</a></li>
             <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
         </ul>
