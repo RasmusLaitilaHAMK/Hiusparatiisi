@@ -1,3 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Muokkaa</title>
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+<body>
+
+</body>
+</html>
 <?php
 
 $muokattava=isset($_GET["muokattava"]) ? $_GET["muokattava"]  : "";
@@ -10,7 +25,7 @@ if (empty($muokattava)){
 $initials=parse_ini_file("./ht.as.ini");
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 try{
-    $yhteys=mysqli_connect($initials["databaseserver"], $initials["name"], $initials["password"], $initials["database"]);}
+    $yhteys=mysqli_connect($initials["databaseserver"], $initials["username"], $initials["password"], $initials["database"]);}
 
 catch(Exception $e){
     header("Location:./virhe.html");
@@ -45,6 +60,9 @@ if (!$rivi=mysqli_fetch_object($tulos)){
 
     <input type='submit' name='Päivitä' value='Päivitä'><br>
 </form>
+
+
+
 <!-- loppuun uusi php-osuus -->
 <?php
 //Suljetaan tietokantayhteys
