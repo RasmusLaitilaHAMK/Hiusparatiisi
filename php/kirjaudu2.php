@@ -1,13 +1,9 @@
 <?php
 session_start();
-// Change this to your connection info.
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'trtkp23_6';
-$DATABASE_PASS = 'AQP8stCZ';
-$DATABASE_NAME = 'web_trtkp23_6';
+$initials=parse_ini_file("./muuta/ht.tieto.ini");
 
 // Yrit� yhdist�� tietokantaan k�ytt�en annettuja tietoja.
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+$yhteys = mysqli_connect($initials["dbs"], $initials["user"], $initials["password"], $initials["db"]);;
 if (mysqli_connect_errno()) {
     // Jos yhteysvirhe, lopeta skripti ja n�yt� virhe.
     exit('Failed to connect to MySQL: ' . mysqli_connect_error());
@@ -15,12 +11,12 @@ if (mysqli_connect_errno()) {
 
 // Tarkistetaan, onko kirjautumislomakkeelta saatu data.
 if (!isset($_POST['name'], $_POST['pwd'])) {
-    // Tietoja puuttuu, ohjataan takaisin kirjautumissivulle.
-    exit('Please fill both the username and password fields!');
+    header("Location:../kirjautuminen.html");
+    exit;
 }
 
 // Valmistellaan SQL-kysely.
-if ($stmt = mysqli_prepare($con,'SELECT * FROM users WHERE name = ? and pwd=?')) {
+if ($stmt = mysqli_prepare($yhteys,'SELECT * FROM users WHERE name = ? and pwd=?')) {
     // Bindataan parametrit, t�ss� tapauksessa k�ytt�j�nimi on string, joten k�ytet��n "s".
     mysqli_stmt_bind_param($stmt,'ss', $_POST['name'], $_POST['pwd']);
     mysqli_stmt_execute($stmt);
@@ -28,19 +24,24 @@ if ($stmt = mysqli_prepare($con,'SELECT * FROM users WHERE name = ? and pwd=?'))
     // Tallennetaan tulos, jotta voimme tarkistaa, onko k�ytt�j� tietokannassa.
     //$stmt->store_result();
 
-if ($rivi=mysqli_fetch_object($tulos)){
+if ($rivi=mysqli_fetch_object($tulos))
+    {
     $_SESSION['name'] = $rivi->name;
     $_SESSION['isAdmin'] = $rivi->isAdmin;
-    if ($isAdmin==1){
-        header("Location:../admin/users.html");
+    if ($_SESSION['isAdmin'] <> 0){
+        header("Location:../admin/users.php");
         exit;
     }
-header("Location:../userIn.php");
-exit;
-}
-else{
-    header("Location:../kirjautuminen.html");
-    exit;
+    else{
+        header("Location:../userIn.php");
+        exit;
+        }
+    }
+    else {
+        // Redirect the user to a different page for incorrect credentials.
+        header("Location:../kirjautuminen.html");
+        exit;
+    }
 }
 
 /*
@@ -69,5 +70,4 @@ else{
 
     $stmt->close();
 */
-}
 ?>

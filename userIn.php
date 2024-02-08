@@ -18,8 +18,8 @@ $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Default';
         <h1>Hamkin Hiusparatiisi</h1>
     </header>
     <nav class="login">
-        <a href="kirjautuminen2.html"><p>Tervetuloa:<?php print($name)?></p></a><br>
-        <a href="index.html"><p>Kirjaudu ulos></p></a> 
+        <a href="kirjautuminen2.html"><p>Tervetuloa:<?php print($name)?><br></p></a>
+        <a class="login"><a href="index.html"><p>Kirjaudu ulos</p></a>
     </nav> <!--First navigation box for the login link-->
     <nav>
         <ul class="top-menu">
