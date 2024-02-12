@@ -68,6 +68,7 @@ nav ul{
 .login{
     justify-content: right;
     flex-direction: column;
+    align-items: flex-end;
 }
 .login a{
     color: white;

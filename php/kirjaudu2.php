@@ -5,7 +5,7 @@ $initials=parse_ini_file("./muuta/ht.tieto.ini");
 // Yritï¿½ yhdistï¿½ï¿½ tietokantaan kï¿½yttï¿½en annettuja tietoja.
 $yhteys = mysqli_connect($initials["dbs"], $initials["user"], $initials["password"], $initials["db"]);;
 if (mysqli_connect_errno()) {
-    // Jos yhteysvirhe, lopeta skripti ja nï¿½ytï¿½ virhe.
+    // Jos yhteysvirhe, lopeta skripti ja näytä virhe.
     exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 

@@ -16,7 +16,6 @@
 <?php
 
 $muokattava=isset($_GET["muokattava"]) ? $_GET["muokattava"]  : "";
-
 //Jos tietoa ei ole annettu, palataan listaukseen
 if (empty($muokattava)){
     header("Location:./virhe.html");
@@ -33,7 +32,7 @@ catch(Exception $e){
     exit;
 }
 
-$sql="select * from users where ID=?";
+$sql="SELECT * FROM users WHERE ID=?";
 $stmt=mysqli_prepare($yhteys, $sql);
 //Sijoitetaan muuttuja sql-lauseeseen
 mysqli_stmt_bind_param($stmt, 'i', $muokattava);
@@ -43,7 +42,7 @@ mysqli_stmt_execute($stmt);
 //metodilla mysqli_stmt_get_result($stmt);
 $tulos=mysqli_stmt_get_result($stmt);
 if (!$rivi=mysqli_fetch_object($tulos)){
-    header("Location:../html/tietuettaeiloydy.html");
+    header("Location:./error/eiRivia.html");
     exit;
 }
 ?>
@@ -56,7 +55,7 @@ if (!$rivi=mysqli_fetch_object($tulos)){
     <p>ID: <span><?php echo $rivi->ID; ?></span></p>
     <input type='hidden' name='ID' value='<?php echo $rivi->ID; ?>'>
     <p>name: <input type='text' name='name' value='<?php echo $rivi->name; ?>'></p>
-    <p>password: <input type='text'minlength="8" name='pwd' value='<?php echo $rivi->pwd; ?>'></p>
+    <p>password: <input type='text'minlength="8" maxlentgh="30" name='pwd' value='<?php echo $rivi->pwd; ?>'></p>
     <p>mobile: <input type='text' minlength="10" maxlength="10" name='mobile' value='<?php echo $rivi->mobile; ?>'></p>
 
     <input type='submit' name='Päivitä' value='Päivitä'><br>

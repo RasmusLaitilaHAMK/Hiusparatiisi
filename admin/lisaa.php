@@ -24,7 +24,7 @@
 
     <p>name: <input type='text' name='name' value=''></p>
     <p>password: <input type='text' name='pwd'minlength="8" value=''></p>
-    <p>mobile: <input type='text' minlength="10" maxlength="10" name='mobile' value=''></p>
+    <p>mobile: <input type='tel' minlength="10" maxlength="10" name='mobile' value=''></p>
 
     <input type='submit' name='Päivitä' value='Päivitä'>
 </form>

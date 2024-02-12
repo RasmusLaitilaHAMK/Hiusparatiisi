@@ -5,7 +5,7 @@ try{
     $yhteys = mysqli_connect($initials["dbs"], $initials["user"], $initials["password"], $initials["db"]);
 }
 catch(Exception $e){
-    header("Location:./virhe.html");
+    header("Location:./error/virhe.html");
     exit;   
 }
 

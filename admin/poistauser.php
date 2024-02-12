@@ -6,7 +6,7 @@ try{
 }
 
 catch(Exception $e){
-    header("Location:./virhe.html");
+    header("Location:./error/virhe.html");
     exit;
 }
 
