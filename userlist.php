@@ -42,7 +42,7 @@ mysqli_close($yhteys);
 <body>
 </body>
 <footer>
-        <a href="http://shell.hamk.fi/~trtkp23_6/">© 2024 Rasmus Laitila, Iiro Käki, Lauri Raatikainen</a>
+        <a href="https://github.com/RasmusLaitilaHAMK/Hiusparatiisi">© 2024 Rasmus Laitila, Iiro Käki, Lauri Raatikainen</a>
         <!--Link to github-->
     </footer>
 </html>

@@ -18,7 +18,7 @@ $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Default';
         <h1>Hamkin Hiusparatiisi</h1>
     </header>
     <nav class="login">
-        <a href="#">Tervetuloa:<?php print($name)?><br></a>
+        <a href="./php/profiili.php">Tervetuloa:<?php print($name)?><br></a>
         <a class="login"><a href="index.html">Kirjaudu ulos</a>
     </nav> <!--First navigation box for the login link-->
     <nav>
@@ -44,7 +44,7 @@ $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Default';
             <img id="image2" src="images/2065072220_b34caec003_b.jpg" alt="Hiuksiatähän" title="The Hairmasters">
     </article>
     <footer>
-        <a href="http://shell.hamk.fi/~trtkp23_6/">© 2024 Rasmus Laitila, Iiro Käki, Lauri Raatikainen</a>
+        <a href="https://github.com/RasmusLaitilaHAMK/Hiusparatiisi">© 2024 Rasmus Laitila, Iiro Käki, Lauri Raatikainen</a>
         <!--Link to github-->
     </footer>
 </body>
