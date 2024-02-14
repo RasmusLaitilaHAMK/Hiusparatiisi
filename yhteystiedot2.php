@@ -64,27 +64,27 @@ $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Default';
     <tr>
         <td>maanantai:</td>
         <td></td>
-        <td>8–16</td>
+        <td>8-16</td>
     </tr>
     <tr>
         <td>tiistai:</td>
         <td></td>
-        <td>8–16</td>
+        <td>8-16</td>
     </tr>
     <tr>
         <td>keskiviikko:</td>
         <td></td>
-        <td>8–16</td>
+        <td>8-16</td>
     </tr>
     <tr>
         <td>torstai:</td>
         <td></td>
-        <td>8–16</td>
+        <td>8-16</td>
     </tr>
     <tr>
         <td>perjantai:</td>
         <td></td>
-        <td>8–16</td>
+        <td>8-16</td>
     </tr>
     <tr>
         <td>lauantai:</td>
@@ -105,7 +105,7 @@ $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Default';
 
 <!--Copyrights-->
 <footer>
-    <a href="http://shell.hamk.fi/~trtkp23_6/">© 2024 Rasmus Laitila, Iiro Käki, Lauri Raatikainen</a>
+    <a href="https://github.com/RasmusLaitilaHAMK/Hiusparatiisi">© 2024 Rasmus Laitila, Iiro Käki, Lauri Raatikainen</a>
 </footer>
 </body>
 

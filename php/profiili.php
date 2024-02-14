@@ -1,40 +1,55 @@
 <?php
 session_start();
 
-// Tarkista, onko käyttäjä kirjautunut sisään
-if (!isset($_SESSION['user_id'])) {
-    // Jos ei, ohjaa käyttäjä kirjautumissivulle
-    header("Location: login.php");
-    exit();
+// Tarkista, onko kÃ¤yttÃ¤jÃ¤ kirjautunut sisÃ¤Ã¤n
+if (!isset($_SESSION['name'])) {
+    header("Location:../kirjautuminen.html"); // Ohjaa kirjautumissivulle, jos kÃƒÂ¤yttÃƒÂ¤jÃƒÂ¤ ei ole kirjautunut
+    exit;
 }
 
-// Yhdistä tietokantaan
-$servername = "localhost";
-$username = "käyttäjänimi";
-$password = "salasana";
-$dbname = "web_trtkp23_6";
-
-$connection = new mysqli($servername, $username, $password, $dbname);
-
-// Tarkista yhteys
-if ($connection->connect_error) {
-    die("Yhteysvirhe: " . $connection->connect_error);
+// YhdistetÃ¤Ã¤n tietokantaan
+$initials = parse_ini_file("./muuta/ht.tieto.ini");
+$yhteys = mysqli_connect($initials["dbs"], $initials["user"], $initials["password"], $initials["db"]);
+if (mysqli_connect_errno()) {
+    exit('Failed to connect to MySQL: ' . mysqli_connect_error()); // Lopeta, jos tietokantayhteys epÃƒÂ¤onnistuu
 }
 
-// Hae käyttäjän tiedot
-$user_id = $_SESSION['user_id'];
-$sql = "SELECT nimi, puhelinnumero FROM users WHERE id = $user_id";
-$result = $connection->query($sql);
+// Haetaan kÃ¤yttÃ¤jÃ¤n tiedot tietokannasta
+$sql = "SELECT * FROM users WHERE name = ?";
+$stmt = mysqli_prepare($yhteys, $sql);
+mysqli_stmt_bind_param($stmt, 's', $_SESSION['name']);
+mysqli_stmt_execute($stmt);
+$tulos = mysqli_stmt_get_result($stmt);
+$kayttaja = mysqli_fetch_assoc($tulos);
+?>
 
-if ($result->num_rows > 0) {
-    // Tulosta käyttäjän tiedot
-    $row = $result->fetch_assoc();
-    echo "Nimi: " . $row["nimi"] . "<br>";
-    echo "Puhelinnumero: " . $row["puhelinnumero"] . "<br>";
-} else {
-    echo "Käyttäjätietoja ei löytynyt";
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/profiili.css">
+    <title>Profiilisivu</title>
+</head>
+<body>
+   
+    
+    <h1>Tervetuloa <?php echo $_SESSION['name']; ?>!</h1>
+    
+    <h2>Omat tiedot:</h2>
+    <!-- NÃ¤yttÃ¤Ã¤ kÃ¤yttÃ¤jÃ¤n tiedot -->
+<div class="container">
+  <form class="custom-form">
+    <p>KÃ¤yttÃ¤jÃ¤nimi: <?php echo $kayttaja['name']; ?></p>
+    <p>Puhelin: <?php echo $kayttaja['mobile']; ?></p>
+    
+    <p><a class="login"><a href="../index.html">Kirjaudu ulos</a></p>
+  </form>
+</div>
+</body>
+</html>
 
+<?php
 // Sulje tietokantayhteys
-$connection->close();
+mysqli_close($yhteys);
 ?>
