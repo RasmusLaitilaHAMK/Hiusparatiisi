@@ -3,15 +3,15 @@ session_start();
 
 // Tarkista, onko käyttäjä kirjautunut sisään
 if (!isset($_SESSION['name'])) {
-    header("Location:../kirjautuminen.html"); // Ohjaa kirjautumissivulle, jos kÃ¤yttÃ¤jÃ¤ ei ole kirjautunut
+    header("Location:../kirjautuminen.html"); // Ohjaa kirjautumissivulle, jos käyttäjä ei ole kirjautunut
     exit;
 }
 
-// Yhdistetään tietokantaan
+// Yhdistä tietokantaan
 $initials = parse_ini_file("./muuta/ht.tieto.ini");
 $yhteys = mysqli_connect($initials["dbs"], $initials["user"], $initials["password"], $initials["db"]);
 if (mysqli_connect_errno()) {
-    exit('Failed to connect to MySQL: ' . mysqli_connect_error()); // Lopeta, jos tietokantayhteys epÃ¤onnistuu
+    exit('Failed to connect to MySQL: ' . mysqli_connect_error()); // Lopeta, jos tietokantayhteys epäonnistuu
 }
 
 // Haetaan käyttäjän tiedot tietokannasta
@@ -28,7 +28,7 @@ $kayttaja = mysqli_fetch_assoc($tulos);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/profiili.css">
+    <link rel="stylesheet" href="../css/login.css">
     <title>Profiilisivu</title>
 </head>
 <body>
@@ -37,15 +37,12 @@ $kayttaja = mysqli_fetch_assoc($tulos);
     <h1>Tervetuloa <?php echo $_SESSION['name']; ?>!</h1>
     
     <h2>Omat tiedot:</h2>
-    <!-- Näyttää käyttäjän tiedot -->
-<div class="container">
-  <form class="custom-form">
+    <!-- Näytä käyttäjän tiedot -->
     <p>Käyttäjänimi: <?php echo $kayttaja['name']; ?></p>
     <p>Puhelin: <?php echo $kayttaja['mobile']; ?></p>
     
-    <p><a class="login"><a href="../index.html">Kirjaudu ulos</a></p>
-  </form>
-</div>
+    <p><a class="login"><a href="../index.html">Kirjaudu ulos</a>
+</p>
 </body>
 </html>
 

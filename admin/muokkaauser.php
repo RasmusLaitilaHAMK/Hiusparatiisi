@@ -32,7 +32,6 @@ catch(Exception $e){
     exit;
 }
 
-
 $sql="SELECT * FROM users WHERE ID=?";
 $stmt=mysqli_prepare($yhteys, $sql);
 //Sijoitetaan muuttuja sql-lauseeseen
@@ -69,4 +68,3 @@ if (!$rivi=mysqli_fetch_object($tulos)){
 //Suljetaan tietokantayhteys
 mysqli_close($yhteys);
 ?>
-
