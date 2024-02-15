@@ -61,7 +61,31 @@ nav ul{
 
 form{
     text-align: center;
-    font-size: 25px;
+    font-size: 25px; 
+    background-color: gray;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10hv;
+}
+
+.custom-form {
+  background-color: yellow;   
+  padding: 20px;
+  width: 400px;
+  color: black;
 }
 
 

@@ -116,7 +116,7 @@ $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Default';
     <!--footer linkki ja copyright-->
 
     <footer>
-        <a href="http://shell.hamk.fi/~trtkp23_6/">© 2024 Rasmus Laitila, Iiro Käki, Lauri Raatikainen</a>
+        <a href="https://github.com/RasmusLaitilaHAMK/Hiusparatiisi">© 2024 Rasmus Laitila, Iiro Käki, Lauri Raatikainen</a>
     </footer>
 </body>
 

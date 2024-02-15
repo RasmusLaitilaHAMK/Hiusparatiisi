@@ -49,7 +49,7 @@ if (!$rivi=mysqli_fetch_object($tulos)){
 
 <!-- Lomake tavallisena html-koodina php tagien ulkopuolella -->
 <!-- Lomake sisältää php-osuuksia, joilla tulostetaan syötekenttiin luetun tietueen tiedot -->
-<!-- id-kenttä on readonly, koska sitä ei ole tarkoitus muuttaa -->
+<!-- id-kenttä on readonly, koska sitÃ¤ ei ole tarkoitus muuttaa -->
 
 <form action='./paivitauser.php' method='post'>
     <p>ID: <span><?php echo $rivi->ID; ?></span></p>

@@ -15,6 +15,18 @@ if (empty($_POST["name"]) || empty($_POST["pwd"])) {
     exit;
 }
 
+$sql_update_user = "UPDATE users SET name=?, pwd=?, mobile=? WHERE ID=?";
+    $stmt_update_user = mysqli_prepare($yhteys, $sql_update_user);
+    mysqli_stmt_bind_param($stmt_update_user, 'sssi', $name, $pwd, $mobile, $muokattava);
+    mysqli_stmt_execute($stmt_update_user);
+
+    // Suljetaan tietokantayhteys
+    mysqli_close($yhteys);
+
+    // Ohjaa takaisin users.php-sivulle
+    header("Location: ./error/duplicate.html");
+    exit;
+
 $name = isset($_POST["name"]) ? $_POST["name"] : "";
 $pwd = isset($_POST["pwd"]) ? $_POST["pwd"] : "";
 $mobile = isset($_POST["mobile"]) ? $_POST["mobile"] : "";
